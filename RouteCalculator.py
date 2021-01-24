@@ -64,6 +64,9 @@ If enjoy this and want something harder please see http://www.codewars.com/kata/
 
 
 def calculate(expression):
+
+    ops = {"+": (lambda x, y: x + y), "-": (lambda x, y: x - y),"/": (lambda x, y: x / y),"*": (lambda x, y: x * y)}
+
     digitPointer = 0
     expPoiner = 0
 
@@ -82,7 +85,9 @@ def calculate(expression):
 
     # this is an array with replaced symbols
     new_array = replaceSymbols(startWithdigitArray)
+
     print(new_array)
+    print(y)
 
     sum = 0
 
@@ -90,19 +95,8 @@ def calculate(expression):
 
 
 
-    last_array = []
-    for i in range(new_array.__len__()):
-        last_array.append(y[digitPointer])
-        last_array.append(new_array[expPoiner])
-        print(last_array)
-        digitPointer+=1
-        expPoiner+=1
 
-    final = ""
-    for i in last_array:
-        final+=i
-
-    print(final)
+    print (ops[new_array[1]](int(y[0]),int(y[1]))) # prints 2
 
 
 
