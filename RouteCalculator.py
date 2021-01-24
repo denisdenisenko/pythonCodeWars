@@ -70,9 +70,8 @@ def calculate(expression):
     x = re.split("\d", expression)
     y = re.split("\D", expression)
 
-
-    startWithSymbolArray =[]
-    startWithdigitArray =[]
+    startWithSymbolArray = []
+    startWithdigitArray = []
     if x[0] == '':
         for i in x:
             if i != '':
@@ -80,22 +79,38 @@ def calculate(expression):
             else:
                 startWithSymbolArray.append(i)
 
-    print(startWithdigitArray)
 
-    newArray = replaceSymbols(startWithdigitArray)
+    # this is an array with replaced symbols
+    new_array = replaceSymbols(startWithdigitArray)
+    print(new_array)
 
     sum = 0
 
-    longest_array = longestArray(x,y)
-
-    print(x)
-    print(y)
-
-    last_array =[]
-    for i in longest_array:
-        #combineTwoArrays
+    longest_array = longestArray(x, y)
 
 
+
+    last_array = []
+    for i in range(new_array.__len__()):
+        last_array.append(y[digitPointer])
+        last_array.append(new_array[expPoiner])
+        print(last_array)
+        digitPointer+=1
+        expPoiner+=1
+
+    final = ""
+    for i in last_array:
+        final+=i
+
+    print(final)
+
+
+
+# combineTwoArrays
+
+
+
+# return   # evaluated expression
 
 
 def longestArray(arr1, arr2):
@@ -106,10 +121,9 @@ def longestArray(arr1, arr2):
     elif y > x:
         return y
 
-    # return   # evaluated expression
 
-def replaceSymbols (arr):
-    newArray =[]
+def replaceSymbols(arr):
+    newArray = []
     for i in arr:
         if i == "$":
             newArray.append("/")
