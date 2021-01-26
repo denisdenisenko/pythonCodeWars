@@ -33,7 +33,7 @@ Test.assert_equals(next_smaller(1234567908), 1234567890)
 """
 
 
-def next_smaller(n):
+"""def next_smaller(n):
     reversed_numbers = []
     while n > 0:
         reversed_numbers.append(n % 10)
@@ -45,7 +45,19 @@ def next_smaller(n):
     if len(numbers) == len(new_numbers):
         return -1
     print()
-    return
+    return"""
+
+
+def next_smaller(n):
+    s = list(str(n))
+    i = j = len(s) - 1
+    while i > 0 and s[i - 1] <= s[i]: i -= 1
+    if i <= 0: return -1
+    while s[j] >= s[i - 1]: j -= 1
+    s[i - 1], s[j] = s[j], s[i - 1]
+    s[i:] = reversed(s[i:])
+    if s[0] == '0': return -1
+    return int(''.join(s))
 
 
 
