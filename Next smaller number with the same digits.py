@@ -1,3 +1,6 @@
+import random
+import itertools
+
 """
 
 Write a function that takes a positive integer and returns the next smaller positive integer containing the same digits.
@@ -36,7 +39,14 @@ def next_smaller(n):
         reversed_numbers.append(n % 10)
         n = n // 10
     numbers = reversed_numbers[::-1]
-    swaped = False
+    combinations = set(itertools.permutations(numbers, len(numbers)))
+    new_numbers = sorted(combinations)
+    print(new_numbers)
+    if len(numbers) == len(new_numbers):
+        return -1
+    print()
+    return
+
 
 
 def convertig_list_to_int(some_list):
@@ -47,9 +57,7 @@ def convertig_list_to_int(some_list):
         list_length -= 1
     return new_integer
 
-def find_next_bigger_number(some_list,biggest):
-    for i in some_list:
-        if
+
 
 
 next_smaller(907)
