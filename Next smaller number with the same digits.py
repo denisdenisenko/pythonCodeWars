@@ -37,16 +37,19 @@ def next_smaller(n):
         n = n // 10
     numbers = reversed_numbers[::-1]
     swaped = False
-    first_index = len(numbers) - 1
-    second_index = len(numbers) - 2
-    for i in range(len(numbers)):
-        if numbers[second_index] > numbers[first_index]:
-            numbers[first_index], numbers[second_index] = numbers[second_index], numbers[first_index]
-            first_index -= 1
-            second_index -= 1
-            return numbers
-    return -1
 
 
+def convertig_list_to_int(some_list):
+    new_integer = 0
+    list_length = len(some_list) - 1
+    for i in range(list_length + 1):
+        new_integer += some_list[i] * (10 ** list_length)
+        list_length -= 1
+    return new_integer
 
-next_smaller(153)
+def find_next_bigger_number(some_list,biggest):
+    for i in some_list:
+        if
+
+
+next_smaller(907)
