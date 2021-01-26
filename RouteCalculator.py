@@ -1,4 +1,11 @@
 import re
+import numpy as np
+from functools import reduce
+import operator
+from itertools import cycle
+
+
+
 
 """This calculator takes values that could be written in a browsers route path as a single string. It then returns the result as a number (or an error message).
 
@@ -64,8 +71,7 @@ If enjoy this and want something harder please see http://www.codewars.com/kata/
 
 
 def calculate(expression):
-
-    ops = {"+": (lambda x, y: x + y), "-": (lambda x, y: x - y),"/": (lambda x, y: x / y),"*": (lambda x, y: x * y)}
+    ops = {"+": (lambda x, y: x + y), "-": (lambda x, y: x - y), "/": (lambda x, y: x / y), "*": (lambda x, y: x * y)}
 
     digitPointer = 0
     expPoiner = 0
@@ -82,7 +88,6 @@ def calculate(expression):
             else:
                 startWithSymbolArray.append(i)
 
-
     # this is an array with replaced symbols
     new_array = replaceSymbols(startWithdigitArray)
 
@@ -92,16 +97,16 @@ def calculate(expression):
     sum = 0
 
     longest_array = longestArray(x, y)
+    final_array = combine_two_lists(y,new_array)
+    print(y)
+    print(final_array)
+    string_array = ""
+    for i in final_array:
+        string_array += i
 
-
-
-
-    print (ops[new_array[1]](int(y[0]),int(y[1]))) # prints 2
-
-
+    print(eval(string_array))
 
 # combineTwoArrays
-
 
 
 # return   # evaluated expression
@@ -127,4 +132,21 @@ def replaceSymbols(arr):
     return newArray
 
 
+
+def combine_two_lists(lst1, lst2):
+    new_lest =[]
+    counter = 0
+    if lst1.__len__() > lst2.__len__():
+        for i in range(lst2.__len__()):
+            new_lest.append(lst1[counter])
+            new_lest.append(lst2[counter])
+            counter+=1
+        new_lest.append(lst1[-1])
+    elif lst1.__len__() < lst2.__len__():
+        for i in range(lst1.__len__()):
+            new_lest.append(lst1[counter])
+            new_lest.append(lst2[counter])
+            counter+=1
+        new_lest.append(lst2[-1])
+    return new_lest
 calculate("45*6$456+3")
