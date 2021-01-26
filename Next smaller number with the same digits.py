@@ -36,15 +36,17 @@ def next_smaller(n):
         reversed_numbers.append(n % 10)
         n = n // 10
     numbers = reversed_numbers[::-1]
-    print(numbers)
     swaped = False
+    first_index = len(numbers) - 1
+    second_index = len(numbers) - 2
+    for i in range(len(numbers)):
+        if numbers[second_index] > numbers[first_index]:
+            numbers[first_index], numbers[second_index] = numbers[second_index], numbers[first_index]
+            first_index -= 1
+            second_index -= 1
+            return numbers
+    return -1
 
-    for i in range(numbers):
-
-    print(numbers)
 
 
-
-
-
-next_smaller(1346785678)
+next_smaller(153)
