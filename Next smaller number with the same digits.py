@@ -32,7 +32,6 @@ Test.assert_equals(next_smaller(123456789), -1)
 Test.assert_equals(next_smaller(1234567908), 1234567890)
 """
 
-
 """def next_smaller(n):
     reversed_numbers = []
     while n > 0:
@@ -57,8 +56,8 @@ def next_smaller(n):
     s[i - 1], s[j] = s[j], s[i - 1]
     s[i:] = reversed(s[i:])
     if s[0] == '0': return -1
+    print(int(''.join(s)))
     return int(''.join(s))
-
 
 
 def convertig_list_to_int(some_list):
@@ -70,6 +69,4 @@ def convertig_list_to_int(some_list):
     return new_integer
 
 
-
-
-next_smaller(907)
+next_smaller(2071)
