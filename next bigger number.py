@@ -1,4 +1,4 @@
-def next_smaller(n):
+def next_bigger(n):
     s = list(str(n))
     i = j = len(s) - 1
     while i > 0 and s[i - 1] <= s[i]: i -= 1
