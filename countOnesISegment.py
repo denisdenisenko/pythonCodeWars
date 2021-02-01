@@ -1,5 +1,6 @@
 import re
 from functools import lru_cache
+import itertools
 
 """
 Given two numbers: 'left' and 'right' (1 <= 'left' <= 'right' <= 200000000000000) return sum of all '1' occurencies in binary representations of numbers between 'left' and 'right' (including both)
@@ -29,8 +30,15 @@ def countOnes(left, right):
         x = bin(i)
         b = re.findall(r"1", x)
         number_of_ones+=len(b)
-
-        print(number_of_ones)
     return number_of_ones
 
-countOnes(0,1000)
+
+def countOnes2(left, right):
+    number_of_ones = 0
+    for i in range(left, right+1):
+        x = bin(i)
+        b = re.findall(r"1", x)
+        number_of_ones+=len(b)
+    return number_of_ones
+
+countOnes(12,29)
