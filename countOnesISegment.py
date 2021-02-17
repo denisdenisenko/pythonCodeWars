@@ -16,7 +16,7 @@ WARNING: Segment may contain billion elements, to pass this kata, your solution 
 
 
 test.describe("Sample Tests")
-test.it('Easy')
+test.it('Easy') 
 test.assert_equals(countOnes(5,7), 7)
 test.assert_equals(countOnes(12,29), 51)
 
