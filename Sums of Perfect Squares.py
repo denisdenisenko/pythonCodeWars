@@ -49,6 +49,7 @@ def sum_of_squares_recurs(n, number, counter):
         number += 1
         return number
     elif math.sqrt(n).is_integer() and counter != 0:
+        number += 1
         return sum_of_squares_recurs(int(math.sqrt(n)), number, 0)
     else:
         n -= 1
