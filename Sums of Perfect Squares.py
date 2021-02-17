@@ -37,24 +37,28 @@ test.assert_equals(sum_of_squares(19), 3)
 def sum_of_squares(n):
     number = 0
     counter = 0
+    new_number = n
     if math.sqrt(n).is_integer():
         number += 1
         return number
     else:
-        return sum_of_squares_recurs(n, number, counter)
+        return sum_of_squares_recurs(new_number, number, counter, n)
 
 
-def sum_of_squares_recurs(n, number, counter):
-    if math.sqrt(n).is_integer() and counter == 0:
+def sum_of_squares_recurs(new_number, number, counter, n):
+    if math.sqrt(new_number).is_integer() and counter == 0:
         number += 1
         return number
-    elif math.sqrt(n).is_integer() and counter != 0:
+    elif math.sqrt(new_number).is_integer() and counter != 0:
         number += 1
-        return sum_of_squares_recurs(int(math.sqrt(n)), number, 0)
+        new_number = counter
+        n = new_number
+        counter = 0
+        return sum_of_squares_recurs(new_number, number, counter, n)
     else:
-        n -= 1
+        new_number -= 1
         counter += 1
-        return sum_of_squares_recurs(n, number, counter)
+        return sum_of_squares_recurs(new_number, number, counter, n)
 
 
 x = sum_of_squares(15)
