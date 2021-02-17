@@ -50,6 +50,10 @@ def sum_of_squares_recurs(n, number, counter):
         return number
     elif math.sqrt(n).is_integer() and counter != 0:
         return sum_of_squares_recurs(int(math.sqrt(n)), number, 0)
+    else:
+        n -= 1
+        counter += 1
+        return sum_of_squares_recurs(n, number, counter)
 
 
 x = sum_of_squares(15)
