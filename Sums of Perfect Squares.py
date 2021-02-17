@@ -1,4 +1,5 @@
 import math
+
 """
 The task is simply stated. Given an integer n (3 < n < 109), find the length of the smallest list of perfect squares which add up to n. Come up with the best algorithm you can; you'll need it!
 
@@ -32,6 +33,7 @@ test.assert_equals(sum_of_squares(18), 2)
 test.assert_equals(sum_of_squares(19), 3)
 """
 
+
 def sum_of_squares(n):
     number = 0
     new_n = 0
@@ -39,10 +41,19 @@ def sum_of_squares(n):
     counter = 0
     while True:
         sqrt_num = math.sqrt(n)
-        if sqrt_num.is_integer():
-            return sqrt_num
+        if sqrt_num.is_integer() and counter == 0:
+            number+=1
+            return number
+        elif sqrt_num.is_integer() and counter != 0:
+            number+=1
+            sqrt_num = n - sqrt_num
+            sum_of_squares_recurs(sqrt_num,number,counter)
 
 
-x = 5.3
-print(x.is_integer())
+        sqrt_num = ((n) - counter)
+        counter += 1
+
+
+def sum_of_squares_recurs(n,number,counter):
+
 
