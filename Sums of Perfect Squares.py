@@ -36,13 +36,13 @@ def sum_of_squares(n):
     number = 0
     new_n = 0
     sqrt_num = n
+    counter = 0
     while True:
         sqrt_num = math.sqrt(n)
+        if sqrt_num.is_integer():
+            return sqrt_num
 
 
+x = 5.3
+print(x.is_integer())
 
-x = 4
-
-y = math.sqrt(x)
-print(y)
-print(type (y))
