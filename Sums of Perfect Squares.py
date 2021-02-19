@@ -61,5 +61,6 @@ def sum_of_squares_recurs(new_number, number, counter, n):
         return sum_of_squares_recurs(new_number, number, counter, n)
 
 
-x = sum_of_squares(16)
+x = sum_of_squares(12)
 print(x)
+
