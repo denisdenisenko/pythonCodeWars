@@ -58,7 +58,7 @@ def kUniques(s, k):
 
         # Add the character 's[i]' to current window
         count[ord(s[i] ) -ord('a')] += 1
-        curr_en d+ =1
+        curr_end+=1
 
         # If there are more than k unique characters in
         # current window, remove from left side
@@ -67,8 +67,8 @@ def kUniques(s, k):
             curr_start += 1
 
         # Update the max window size if required
-        if curr_en d -curr_star t +1 > max_window_size:
-            max_window_size = curr_en d -curr_star t +1
+        if curr_end -curr_start +1 > max_window_size:
+            max_window_size = curr_end -curr_start +1
             max_window_start = curr_start
 
     print ("Max substring is : " + s[max_window_start:max_window_start  + max_window_size]
