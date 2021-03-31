@@ -1,7 +1,7 @@
 class Warrior:
     __all_possible_achievements = ["Pushover", "Novice", "Fighter",
-                                 "Warrior", "Veteran", "Sage", "Elite",
-                                 "Conqueror", "Champion", "Master", "Greatest"]
+                                   "Warrior", "Veteran", "Sage", "Elite",
+                                   "Conqueror", "Champion", "Master", "Greatest"]
 
     def __init__(self):
         self._level = 1
