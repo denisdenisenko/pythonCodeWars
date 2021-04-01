@@ -34,5 +34,25 @@ class Warrior:
 
     @rank.setter
     def rank(self):
-        if self._level > 1 and self.level < 10:
+        if self._level >= 1 and self.level < 10:
             self._rank = self.__all_possible_achievements[0]
+        elif self._level >= 10 and self.level < 19:
+            self._rank = self.__all_possible_achievements[1]
+        elif self._level >= 20 and self.level < 29:
+            self._rank = self.__all_possible_achievements[2]
+        elif self._level >= 30 and self.level < 39:
+            self._rank = self.__all_possible_achievements[3]
+        elif self._level >= 40 and self.level < 49:
+            self._rank = self.__all_possible_achievements[4]
+        elif self._level >= 50 and self.level < 59:
+            self._rank = self.__all_possible_achievements[5]
+        elif self._level >= 60 and self.level < 69:
+            self._rank = self.__all_possible_achievements[6]
+        elif self._level >= 70 and self.level < 79:
+            self._rank = self.__all_possible_achievements[7]
+        elif self._level >= 80 and self.level < 89:
+            self._rank = self.__all_possible_achievements[8]
+        elif self._level >= 90 and self.level < 99:
+            self._rank = self.__all_possible_achievements[9]
+        elif self._level == 100:
+            self._rank = self.__all_possible_achievements[10]
