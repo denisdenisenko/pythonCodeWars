@@ -6,7 +6,7 @@ class Warrior:
     def __init__(self):
         self._level = 1
         self._experience = 100
-        self._rank = "Pushover"
+        self._rank = self.__all_possible_achievements[0]
         self._achievements = []
 
     @property
