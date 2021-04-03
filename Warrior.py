@@ -56,3 +56,6 @@ class Warrior:
             self._rank = self.__all_possible_achievements[9]
         elif self._level == 100:
             self._rank = self.__all_possible_achievements[10]
+
+    def battle (self,enemy_rank) :
+        pass
