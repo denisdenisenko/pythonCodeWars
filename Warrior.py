@@ -63,6 +63,7 @@ class Warrior:
     def rank(self, rank):
         if rank in self.__all_possible_achievements:
             self._rank = rank
+
         else:
             print("Invalid rank")
         pass
