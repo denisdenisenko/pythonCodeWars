@@ -18,22 +18,7 @@ class Warrior:
         if (self.level + value) >= 100:
             self._level = 100
             print("You are master now, and reached lvl 100")
-        self._level = self._level + value
-
-    @property
-    def experience(self):
-        return self._experience
-
-    @experience.setter
-    def experience(self, value):
-        self._experience = self._experience + value
-
-    @property
-    def rank(self):
-        return self._rank
-
-    @rank.setter
-    def rank(self):
+            self._rank = self.__all_possible_achievements[10]
         if self._level >= 1 and self.level < 10:
             self._rank = self.__all_possible_achievements[0]
         elif self._level >= 10 and self.level < 19:
@@ -54,8 +39,28 @@ class Warrior:
             self._rank = self.__all_possible_achievements[8]
         elif self._level >= 90 and self.level < 99:
             self._rank = self.__all_possible_achievements[9]
-        elif self._level == 100:
-            self._rank = self.__all_possible_achievements[10]
+
+
+    @property
+    def experience(self):
+        return self._experience
+
+    @experience.setter
+    def experience(self, value):
+        self._experience = self._experience + value
+
+    @property
+    def rank(self):
+        return self._rank
+
+    @rank.setter
+    def rank(self, rank):
+        if rank in self.__all_possible_achievements :
+            self._rank = rank
+        else :
+            print ("Invalid rank")
+        pass
+
 
     def battle (self,enemy_rank) :
         pass
