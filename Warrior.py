@@ -5,7 +5,6 @@ class Warrior:
 
     __all_fights = ["Easy fight", "A good fight", "An intense fight"]
 
-
     def __init__(self):
         self._level = 1
         self._experience = 100
@@ -49,9 +48,9 @@ class Warrior:
 
     @experience.setter
     def experience(self, value):
-        if value > 10000 :
+        if value > 10000:
             print("Invlid value")
-        elif  self._experience + value > 10000:
+        elif self._experience + value > 10000:
             self._experience = 10000
             print("You've reached maximun Experience")
             self._rank = self.__all_possible_achievements[10]
@@ -72,6 +71,6 @@ class Warrior:
         pass
 
     def battle(self, enemy_rank):
-        if enemy_rank < 1 and enemy_rank >100 :
+        if enemy_rank < 1 and enemy_rank > 100:
             return "Invalid level"
         pass
