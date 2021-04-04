@@ -71,6 +71,9 @@ class Warrior:
         pass
 
     def battle(self, enemy_rank):
-        if enemy_rank < 1 and enemy_rank > 100:
+        if 1 > enemy_rank > 100:
             return "Invalid level"
+        elif (enemy_rank - self._rank) < 0:
+            print("need to erite some logig here")
+            pass
         pass
