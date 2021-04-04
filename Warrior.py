@@ -3,6 +3,9 @@ class Warrior:
                                    "Warrior", "Veteran", "Sage", "Elite",
                                    "Conqueror", "Champion", "Master", "Greatest"]
 
+    __all_fights = ["Easy fight", "A good fight", "An intense fight"]
+
+
     def __init__(self):
         self._level = 1
         self._experience = 100
@@ -69,4 +72,6 @@ class Warrior:
         pass
 
     def battle(self, enemy_rank):
+        if enemy_rank < 1 and enemy_rank >100 :
+            return "Invalid level"
         pass
