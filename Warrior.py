@@ -74,7 +74,7 @@ class Warrior:
         if 1 > enemy_rank > 100:
             return "Invalid level"
         elif (enemy_rank - self._rank) < 0:
-            print("need to erite some logig here")
+            print("need to enter some logic here")
             pass
         pass
 
