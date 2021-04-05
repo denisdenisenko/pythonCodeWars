@@ -77,3 +77,5 @@ class Warrior:
             print("need to erite some logig here")
             pass
         pass
+
+    print("helllo nadia")
