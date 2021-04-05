@@ -80,3 +80,4 @@ class Warrior:
 
     print("helllo nadia")
     print("this is denis")
+    print("good night")
