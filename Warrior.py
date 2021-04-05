@@ -79,4 +79,4 @@ class Warrior:
         pass
 
     print("helllo nadia")
-    print("this is denis ")
+    print("this is denis")
