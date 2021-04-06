@@ -77,7 +77,3 @@ class Warrior:
             print("need to enter some logic here")
             pass
         pass
-
-    print("helllo nadia")
-    print("this is denis")
-    print("good night")
